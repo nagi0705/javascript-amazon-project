@@ -209,3 +209,9 @@
   margin-top: 11px;
   margin-bottom: 15px;
 }
+
+.js-delete-link:hover,
+.js-update-link:hover {
+  color: orange;
+  cursor: pointer;
+}
