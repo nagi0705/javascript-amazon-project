@@ -11,6 +11,7 @@ const today = dayjs();
 const deliveryDate = today.add(7, 'days');
 console.log(deliveryDate.format('dddd, MMMM D'));
 
+function renderOrderSummary() {
 let cartSummaryHTML = '';  
 
 cart.forEach((cartItem) => {
@@ -59,7 +60,7 @@ cart.forEach((cartItem) => {
             ${matchingProduct.name}
           </div>
           <div class="product-price">
-            ${formatCurrency(matchingProduct.priceCents)}
+            $${formatCurrency(matchingProduct.priceCents)}
           </div>
           <div class="product-quantity">
             <span>
@@ -69,7 +70,8 @@ cart.forEach((cartItem) => {
             <span class="update-quantity-link link-primary">
               Update
             </span>
-            <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
+            <span class="delete-quantity-link link-primary js-delete-link"
+            data-product-id="${matchingProduct.id}">
               Delete
             </span>
           </div>
@@ -153,5 +155,9 @@ document.querySelectorAll('.js-delivery-option')
     element.addEventListener('click', () => {
       const {productId, deliveryOptionId} = element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
+      renderOrderSummary();
     });
   });
+}
+
+renderOrderSummary();
