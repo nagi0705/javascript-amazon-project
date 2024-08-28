@@ -6,6 +6,8 @@ import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js';
 import { renderPaymentSummary } from './paymentSummary.js';
 
+hello();
+
 export function renderOrderSummary() {
     let cartSummaryHTML = '';  
 
@@ -31,7 +33,7 @@ export function renderOrderSummary() {
                         <div class="product-price">$${formatCurrency(matchingProduct.priceCents)}</div>
                         <div class="product-quantity">
                             <span>Quantity: <span class="quantity-label">${cartItem.quantity}</span></span>
-                            <span class="update-quantity-link link-primary">Update</span>
+                            <span class="update-quantity-link link-primary js-update-link" data-product-id="${matchingProduct.id}">Update</span>
                             <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">Delete</span>
                         </div>
                     </div>
@@ -88,9 +90,20 @@ export function renderOrderSummary() {
             renderPaymentSummary();
         });
     });
+
+    document.querySelectorAll('.js-update-link').forEach((button) => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.productId;
+            console.log(`Update clicked for product ID: ${productId}`);
+            const newQuantity = prompt('Enter new quantity:');
+            if (newQuantity && !isNaN(newQuantity)) {
+                console.log(`New quantity for product ID ${productId}: ${newQuantity}`);
+            }
+        });
+    });
 }
 
-// 新たに追加する関数 renderOrderDetails
+
 export function renderOrderDetails() {
-    renderOrderSummary(); // 任意の処理をこの関数内で行うことができます。
+    renderOrderSummary(); 
 }
