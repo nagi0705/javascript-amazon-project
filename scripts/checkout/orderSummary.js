@@ -29,11 +29,14 @@ export function renderOrderSummary() {
                     Delivery date: ${dateString}
                 </div>
                 <div class="cart-item-details-grid">
-                    <img class="product-image" src="${matchingProduct.image}">
+                    <img class="product-image"
+                    src="${matchingProduct.image}">
                     <div class="cart-item-details">
-                        <div class="product-name">${matchingProduct.name}</div>
+                        <div class="product-name">
+                        ${matchingProduct.name}
+                        </div>
                         <div class="product-price">
-                        $${formatCurrency(matchingProduct.priceCents)}
+                        ${matchingProduct.getPrice()}
                         </div>
                         <div class="product-quantity
                            js-product-quantity-${matchingProduct.id}">
