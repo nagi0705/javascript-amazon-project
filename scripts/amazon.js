@@ -1,10 +1,14 @@
 import {cart, addToCart} from '../data/cart.js';
-import { products } from '../data/products.js';
+import { products,loadProducts } from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 
-let productsHTML = '';
+loadProducts(renderProductsGrid);
 
-products.forEach((product) => {  
+function renderProductsGrid() {
+
+ let productsHTML = '';
+
+ products.forEach((product) => {  
   productsHTML += `
      <div class="product-container">
           <div class="product-image-container">
@@ -81,3 +85,4 @@ document.querySelectorAll('.js-add-to-cart')
             updateCartQuantity();
         });
     });
+  }
