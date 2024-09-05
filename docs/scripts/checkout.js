@@ -1,8 +1,8 @@
 // checkout.js
-import { renderOrderSummary } from './checkout/orderSummary.js'; // パスの修正
-import { renderPaymentSummary } from './checkout/paymentSummary.js'; // パスの修正
-import { loadProductsFetch } from '../data/products.js'; // パスの修正
-import { loadCart } from '../data/cart.js'; // パスの修正
+import { renderOrderSummary } from './checkout/orderSummary.js';
+import { renderPaymentSummary } from './checkout/paymentSummary.js';
+import { loadProductsFetch } from '/javascript-amazon-project/data/products.js'; // パスを絶対パスに変更
+import { loadCart } from '/javascript-amazon-project/data/cart.js'; // パスを絶対パスに変更
 
 // ページの読み込み処理
 async function loadPage() {
