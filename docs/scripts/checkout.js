@@ -1,3 +1,4 @@
+// checkout.js ファイルの内容
 import { renderOrderSummary } from '../scripts/checkout/orderSummary.js';
 import { renderPaymentSummary } from '../scripts/checkout/paymentSummary.js';
 import { loadProductsFetch } from '../data/products.js';
