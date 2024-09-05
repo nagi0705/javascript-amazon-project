@@ -1,8 +1,8 @@
-// checkout.js ファイルの内容
-import { renderOrderSummary } from '../scripts/checkout/orderSummary.js';
-import { renderPaymentSummary } from '../scripts/checkout/paymentSummary.js';
-import { loadProductsFetch } from '../data/products.js';
-import { loadCart } from '../data/cart.js';
+// checkout.js
+import { renderOrderSummary } from './checkout/orderSummary.js'; // パスの修正
+import { renderPaymentSummary } from './checkout/paymentSummary.js'; // パスの修正
+import { loadProductsFetch } from '../data/products.js'; // パスの修正
+import { loadCart } from '../data/cart.js'; // パスの修正
 
 // ページの読み込み処理
 async function loadPage() {
