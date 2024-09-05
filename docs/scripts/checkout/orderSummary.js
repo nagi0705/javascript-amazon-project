@@ -1,12 +1,9 @@
-import { cart, removeFromCart, updateDeliveryOption } from '../../../data/cart.js';
-import { getProduct } from '../../../data/products.js';
-import { formatCurrency } from '../utils/money.js';
-import { hello } from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
+import { cart, removeFromCart, updateDeliveryOption } from '/javascript-amazon-project/data/cart.js';
+import { getProduct } from '/javascript-amazon-project/data/products.js';
+import { formatCurrency } from '/javascript-amazon-project/scripts/utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-import { deliveryOptions, getDeliveryOption } from '../../../data/deliveryOptions.js';
+import { deliveryOptions, getDeliveryOption } from '/javascript-amazon-project/data/deliveryOptions.js';
 import { renderPaymentSummary } from './paymentSummary.js';
-
-hello();
 
 export function renderOrderSummary() {
     let cartSummaryHTML = '';  
@@ -111,15 +108,10 @@ export function renderOrderSummary() {
     document.querySelectorAll('.js-update-link').forEach((button) => {
         button.addEventListener('click', () => {
             const productId = button.dataset.productId;
-            console.log(`Update clicked for product ID: ${productId}`);
             const newQuantity = prompt('Enter new quantity:');
             if (newQuantity && !isNaN(newQuantity)) {
-                console.log(`New quantity for product ID ${productId}: ${newQuantity}`);
+                // 数量更新のロジックをここに追加
             }
         });
     });
-}
-
-export function renderOrderDetails() {
-    renderOrderSummary(); 
 }

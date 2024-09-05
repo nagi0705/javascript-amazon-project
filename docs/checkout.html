@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+  <!-- CSSファイルの正しいパスを指定 -->
   <link rel="stylesheet" href="/javascript-amazon-project/styles/checkout/checkout-header.css">
   <link rel="stylesheet" href="/javascript-amazon-project/styles/checkout/checkout.css">
 </head>
@@ -17,15 +18,17 @@
     <div class="header-content">
       <div class="checkout-header-left-section">
         <a href="amazon.html">
-          <img class="amazon-logo" src="./images/amazon-logo.png" alt="Amazon logo">
-          <img class="amazon-mobile-logo" src="./images/amazon-mobile-logo.png" alt="Amazon mobile logo">
+          <!-- 画像ファイルのパスも絶対パスに修正 -->
+          <img class="amazon-logo" src="/javascript-amazon-project/images/amazon-logo.png" alt="Amazon logo">
+          <img class="amazon-mobile-logo" src="/javascript-amazon-project/images/amazon-mobile-logo.png"
+            alt="Amazon mobile logo">
         </a>
       </div>
       <div class="checkout-header-middle-section">
         Checkout (<a class="return-to-home-link" href="amazon.html">3 items</a>)
       </div>
       <div class="checkout-header-right-section">
-        <img src="./images/icons/checkout-lock-icon.png" alt="Secure checkout lock icon">
+        <img src="/javascript-amazon-project/images/icons/checkout-lock-icon.png" alt="Secure checkout lock icon">
       </div>
     </div>
   </div>
@@ -38,8 +41,8 @@
     </div>
   </div>
 
-  <!-- JavaScriptの相対パス修正 -->
-  <script type="module" src="./scripts/checkout.js"></script>
+  <!-- JavaScriptファイルの正しいパスを指定 -->
+  <script type="module" src="/javascript-amazon-project/scripts/checkout.js"></script>
 </body>
 
 </html>
